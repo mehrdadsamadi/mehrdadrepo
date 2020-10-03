@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+:root{
+  --mainBlue:#40ACF1;
+  --transparentBlue:rgba(64, 172, 241,0.7);
+  --mainWhite:#FFFFFF;
+  --mainBlack:#292F36;
+  --mainGrey:rgb(216, 214, 214);
+  --mainYellow:#e3b505;
+}
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  overflow-x: hidden;
+}
+
+/* scroll */
+::-webkit-scrollbar{
+  width: 15px;
+}
+::-webkit-scrollbar-track{
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track-piece{
+  background-color: var(--mainBlack);
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: var(--mainBlue);
+  box-shadow: inset 0px 0px 5px var(--mainGrey);
+  transition: background-color .3s linear;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #3895cf;
+}
+/* end scroll */
+
+/* top btn */
+#top-btn{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 998;
+  display: none;
+}
+
+::selection{
+  background-color: var(--mainBlue);
+}
+/* end top btn */
+
+/* preloder */
+.preloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--mainWhite);
+  z-index: 999;
+}
+.hide-preloader{
+  display: none !important;
+}
+/* end preloder */
+
+/* navbar */
+#navbar{
+  background: var(--mainWhite);
+}
+.navbar-icon{
+  color: var(--mainBlue);
+  font-size: 2rem;
+}
+.navbar-toggler{
+  outline-color: var(--mainBlue) !important;
+}
+.nav-icon{
+  font-size: 1.5rem;
+  color: var(--mainBlue);
+  transition: color .3s linear;
+  text-decoration: none !important;
+}
+.nav-icon:hover{
+  color: var(--mainBlack);
+}
+.nav-link{
+  text-transform: capitalize;
+  color: var(--mainBlack);
+}
+.nav-link:hover{
+  color: var(--mainBlue);
+}
+.navbar-nav li.active a{
+  color: var(--mainBlue);
+}
+.navbar-nav li.active::after{
+  content: "";
+  display: block;
+  height: 2px;
+  width: inherit;
+  background-color: var(--mainBlue);
+}
+.img-brand{
+  width: 50px;
+  height: 50px;
+}
+/* end navbar */
+
+/* header */
+.header{
+  clip-path: polygon(0 0,100% 0,100% 95%,50% 100%,0 95%);/* for shape */
+  color: var(--mainWhite);
+  overflow: hidden;
+}
+.height-max{
+  min-height: calc(100vh - 76px);
+  background: url(../img/headerBcg.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: zoom 20s infinite 3s;
+}
+
+@keyframes zoom{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2) translateX(-6%);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.title-heading{
+  background-color: rgba(0, 0, 0, .5);
+  border-left: 2px solid var(--mainBlue);
+}
+.title{
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+@media screen and (min-width:768px){
+  .title{
+    font-size: 3rem;
+  }
+}
+
+.title-icon{
+  text-decoration: none !important;
+  color: var(--mainBlue);
+}
+.title-icon:hover{
+  color: var(--mainBlue);
+  opacity: .6;
+}
+/* end header */
+
+/* skills section */
+.special-title{
+  background-color: var(--transparentBlue);
+  padding: .5rem 2rem;
+  color: var(--mainWhite);
+  clip-path: polygon(10% 0,100% 0,90% 100%,0 100%);
+}
+.skill-icon{
+  font-size: 3rem;
+  color: var(--mainYellow);
+  background-color: var(--mainBlack);
+}
+.skill-icon:hover{
+  color: var(--mainYellow);
+  opacity: .5;
+}
+.skill-underline{
+  height: 5px;
+  width: 4rem;
+  background-color: var(--mainYellow);
+  margin: 1rem auto;
+  clip-path: polygon(5% 0,100% 0,95% 100%,0 100%);
+}
+/* end skills section */
+
+/* inventory */
+.inventory{
+  background-color: var(--mainBlack);
+  clip-path: polygon(0 5%,50% 0,100% 5%,100% 100%,0 100%);
+}
+.car-card{
+  border-radius: 0 !important;
+}
+.car-img{
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+.car-value{
+  background-color: var(--mainBlue);
+  color: var(--mainWhite);
+  border-radius: 5px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+.car-value:hover{
+  background-color: var(--mainBlack);
+}
+@media screen and (max-width:768px){
+  .our-inventory{
+    margin-top: 3rem !important;
+    padding-top: 2rem;
+  }
+}
+/* end inventory */
+
+/* question section */
+.question{
+  background: url('../img/questionBcg.jpeg')center/cover fixed no-repeat;
+}
+.question-gray{
+  background-color: rgba(79, 109, 122, 0.75);
+}
+.question-yellow{
+  background-color: rgba(277, 181, 5, 0.75);
+}
+.question-icon{
+  font-size: 4rem;
+  color: var(--mainBlue);
+  transition: all .3s ease-in-out;
+}
+.question-icon:hover{
+  color: var(--mainBlue);
+  transform: translateY(-10%);
+}
+/* end question section */
+
+/* featured */
+.featured{
+  background-color: var(--mainGrey);
+}
+.featured-item{
+  opacity: .5;
+  border-radius: 8px;
+  background-color: var(--mainWhite);
+  cursor: pointer;
+  transition: all .3s ease-out;
+}
+.featured-item:hover{
+  opacity: 1;
+  transform: scale(1.05);
+}
+.featured-icon{
+  color: var(--mainYellow);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.img-container{
+  position: relative;
+  background-color: var(--mainBlue);
+  overflow: hidden;
+}
+.featured-photo{
+  transition: all .5s ease-out;
+}
+.img-container:hover .featured-photo{
+  transform: scale(1.3);
+  opacity: .5;
+}
+.featured-link{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 3rem;
+  transform: translate(-50%,-50%);
+  color: var(--mainBlack);
+  opacity: 0;
+  transition: all .3s ease-out;
+}
+.featured-link:hover{
+  color: var(--mainWhite);
+}
+.img-container:hover .featured-link{
+  opacity: 1;
+}
+/* end featured */
+
+/* gallery section */
+.gallery-item{
+  background-color: var(--mainYellow);
+  position: relative;
+  cursor: pointer;
+}
+.gallery-photo{
+  transition: all .5s ease-out;
+}
+.gallery-item:hover .gallery-photo{
+  opacity: .5;
+}
+.gallery-item::after{
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: .5rem solid var(--mainWhite);
+  outline-offset: -2rem;
+  transition: all .5s ease-out;
+  transform: scale(0);
+}
+.gallery-item:hover::after{
+  transform: scale(1);
+}
+/* end gallery section */
+
+/* contact section */
+.contact{
+  background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url(../img/headerBcg.jpeg)center/cover fixed no-repeat;
+}
+.contact-input{
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-color: var(--mainYellow);
+  color: var(--mainYellow);
+  background: transparent;
+}
+.contact-input:placeholder{
+  color: var(--mainYellow);
+}
+.contact-input:focus{
+  background: transparent;
+  border-color: var(--mainYellow);
+}
+.contact-btn{
+  text-transform: uppercase;
+  border-color: var(--mainYellow);
+  color: var(--mainYellow);
+}
+.contact-btn:hover{
+  background: var(--mainYellow);
+}
+/* end contact section */
+
+/* sevices section */
+.services{
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+  clip-path: polygon(0 10%,100% 0,100% 90%,0 100%);
+}
+.video-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+.video-item{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--transparentBlue);
+  z-index: -2;
+}
+.service{
+  background-color: var(--mainBlack);
+  color: var(--mainWhite);
+  transition: all .5s ease-out;
+}
+.service:hover{
+  background-color: var(--mainWhite);
+  color: var(--mainBlack);
+  padding-left: 2.2rem !important;
+}
+.service-icon{
+  color: var(--mainYellow);
+  font-size: 4rem;
+}
+/* end sevices section */
+
+/* quotes section */
+.customer-card-body{
+  margin-top: -4rem !important;
+  color: var(--mainGrey);
+}
+.customer-img{
+  border: .4rem solid var(--mainWhite);
+}
+.customer-name{
+  color: var(--mainBlue);
+  margin-top: .5rem;
+}
+.customer-icon{
+  font-size: 2rem;
+  color: var(--mainBlack);
+}
+/* end quotes section */
+
+/* footer */
+.footer{
+  background-color: var(--mainBlack);
+}
+.footer-icon{
+  font-size: 1.5rem;
+  color: var(--mainYellow);
+  text-decoration: none;
+  transition: all .3s ease-out;
+}
+.footer-icon:hover{
+  color: var(--mainBlue);
+}
+/* end footer */
